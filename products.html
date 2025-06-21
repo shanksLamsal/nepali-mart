@@ -6,96 +6,365 @@
     <meta name="description" content="Our Products - Nepali Mart">
     <title>Products - Nepali Mart</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="src/styles.css">
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-50 font-sans">
 
-    <!-- Navigation Bar -->
-    <nav class="bg-white shadow-md">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a class="text-2xl font-bold text-gray-800" href="index.html">Nepali Mart</a>
-            <div class="hidden md:flex space-x-6">
-                <a class="text-gray-800 hover:text-blue-500" href="index.html">Home</a>
-                <a class="text-gray-800 hover:text-blue-500" href="products.html">Products</a>
-                <a class="text-gray-800 hover:text-blue-500" href="offers.html">Offers</a>
-                <a class="text-gray-800 hover:text-blue-500" href="about.html">About Us</a>
-                <a class="text-gray-800 hover:text-blue-500" href="contact.html">Contact</a>
-                <a class="text-gray-800 hover:text-blue-500" href="cart.html">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                    </svg>
+    <!-- Sticky Navigation Bar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50 border-b-2 border-green-600">
+        <div class="container mx-auto px-4 lg:px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-shopping-basket text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-800 minecraft-font">Nepali Mart</span>
                 </a>
-            </div>
-            <div class="md:hidden">
-                <button class="text-gray-800 focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <!-- Search Bar -->
+                    <div class="relative">
+                        <input type="text" placeholder="Search products..." 
+                               class="w-80 px-4 py-2 pl-10 pr-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                    </div>
+
+                    <!-- Category Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 text-gray-700 hover:text-green-600 transition-colors">
+                            <span>Categories</span>
+                            <i class="fas fa-chevron-down text-sm"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">Groceries</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">Fresh Produce</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">Dairy & Eggs</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">Beverages</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">Snacks</a>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Links -->
+                    <a href="index.html" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Home</a>
+                    <a href="products.html" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Products</a>
+                    <a href="offers.html" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Offers</a>
+                    <a href="about.html" class="text-gray-700 hover:text-green-600 transition-colors font-medium">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Contact</a>
+
+                    <!-- Cart Icon with Count -->
+                    <a href="cart.html" class="relative text-gray-700 hover:text-green-600 transition-colors">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">0</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
                 </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4 border-t border-gray-200">
+                <div class="mt-4">
+                    <input type="text" placeholder="Search products..." 
+                           class="w-full px-4 py-2 pl-10 pr-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                </div>
+                <div class="mt-4 space-y-2">
+                    <a href="index.html" class="block py-2 text-gray-700 hover:text-green-600">Home</a>
+                    <a href="products.html" class="block py-2 text-gray-700 hover:text-green-600">Products</a>
+                    <a href="offers.html" class="block py-2 text-gray-700 hover:text-green-600">Offers</a>
+                    <a href="about.html" class="block py-2 text-gray-700 hover:text-green-600">About</a>
+                    <a href="contact.html" class="block py-2 text-gray-700 hover:text-green-600">Contact</a>
+                </div>
             </div>
         </div>
     </nav>
 
+    <!-- Page Header -->
+    <header class="bg-gradient-to-r from-green-600 to-green-800 py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4 minecraft-font">Our Products</h1>
+            <p class="text-xl text-green-100">Discover our wide range of quality products</p>
+        </div>
+    </header>
+
+    <!-- Filter and Sort Section -->
+    <section class="bg-white border-b border-gray-200 py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <div class="flex items-center space-x-4">
+                    <span class="text-gray-700 font-medium">Filter by:</span>
+                    <select class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <option>All Categories</option>
+                        <option>Groceries</option>
+                        <option>Fresh Produce</option>
+                        <option>Dairy & Eggs</option>
+                        <option>Beverages</option>
+                        <option>Snacks</option>
+                    </select>
+                    <select class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Name: A to Z</option>
+                        <option>Name: Z to A</option>
+                    </select>
+                </div>
+                <div class="text-gray-600">
+                    <span id="product-count">12</span> products found
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Products Grid -->
-    <main class="container mx-auto px-6 py-12">
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Our Products</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Product Card -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/300x200" alt="Rice" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Rice</h3>
-                    <p class="text-gray-600 mb-4">$20.00</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition duration-300">Add to Cart</button>
+    <main class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Premium Rice" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">SALE</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Premium Basmati Rice</h3>
+                        <p class="text-gray-600 text-sm mb-3">High-quality aromatic rice perfect for your meals</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">$24.99</span>
+                            <span class="text-gray-400 line-through text-sm">$29.99</span>
+                        </div>
+                        <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors add-to-cart-btn" 
+                                data-name="Premium Basmati Rice" data-price="24.99">
+                            <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Organic Oil" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Organic Coconut Oil</h3>
+                        <p class="text-gray-600 text-sm mb-3">Pure and natural coconut oil for cooking</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">$18.99</span>
+                        </div>
+                        <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors add-to-cart-btn" 
+                                data-name="Organic Coconut Oil" data-price="18.99">
+                            <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Fresh Vegetables" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-bold">FRESH</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Fresh Vegetable Pack</h3>
+                        <p class="text-gray-600 text-sm mb-3">Assorted fresh vegetables from local farms</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">$12.99</span>
+                        </div>
+                        <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors add-to-cart-btn" 
+                                data-name="Fresh Vegetable Pack" data-price="12.99">
+                            <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Organic Fruits" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-bold">ORGANIC</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Organic Fruit Basket</h3>
+                        <p class="text-gray-600 text-sm mb-3">Seasonal organic fruits for healthy living</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">$32.99</span>
+                        </div>
+                        <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors add-to-cart-btn" 
+                                data-name="Organic Fruit Basket" data-price="32.99">
+                            <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Fresh Milk" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-bold">FRESH</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Fresh Dairy Milk</h3>
+                        <p class="text-gray-600 text-sm mb-3">Pure and fresh milk from local farms</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">$4.99</span>
+                        </div>
+                        <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors add-to-cart-btn" 
+                                data-name="Fresh Dairy Milk" data-price="4.99">
+                            <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Whole Grain Bread" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Whole Grain Bread</h3>
+                        <p class="text-gray-600 text-sm mb-3">Healthy whole grain bread baked fresh daily</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">$3.99</span>
+                        </div>
+                        <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors add-to-cart-btn" 
+                                data-name="Whole Grain Bread" data-price="3.99">
+                            <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 7 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Organic Eggs" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-bold">ORGANIC</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Organic Free-Range Eggs</h3>
+                        <p class="text-gray-600 text-sm mb-3">Farm fresh organic eggs from free-range chickens</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">$8.99</span>
+                        </div>
+                        <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors add-to-cart-btn" 
+                                data-name="Organic Free-Range Eggs" data-price="8.99">
+                            <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 8 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Natural Honey" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-bold">NATURAL</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Pure Natural Honey</h3>
+                        <p class="text-gray-600 text-sm mb-3">100% pure natural honey from local beekeepers</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">$15.99</span>
+                        </div>
+                        <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors add-to-cart-btn" 
+                                data-name="Pure Natural Honey" data-price="15.99">
+                            <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                        </button>
+                    </div>
                 </div>
             </div>
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/300x200" alt="Oil" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Oil</h3>
-                    <p class="text-gray-600 mb-4">$15.00</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition duration-300">Add to Cart</button>
-                </div>
-            </div>
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/300x200" alt="Noodles" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Noodles</h3>
-                    <p class="text-gray-600 mb-4">$1.00</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition duration-300">Add to Cart</button>
-                </div>
-            </div>
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/300x200" alt="Vegetables" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Vegetables</h3>
-                    <p class="text-gray-600 mb-4">$5.00</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition duration-300">Add to Cart</button>
-                </div>
-            </div>
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/300x200" alt="Fruits" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Fruits</h3>
-                    <p class="text-gray-600 mb-4">$8.00</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition duration-300">Add to Cart</button>
-                </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center mt-12">
+                <nav class="flex items-center space-x-2">
+                    <a href="#" class="px-4 py-2 text-gray-500 hover:text-green-600 transition-colors">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                    <a href="#" class="px-4 py-2 bg-green-600 text-white rounded-lg">1</a>
+                    <a href="#" class="px-4 py-2 text-gray-700 hover:text-green-600 transition-colors">2</a>
+                    <a href="#" class="px-4 py-2 text-gray-700 hover:text-green-600 transition-colors">3</a>
+                    <a href="#" class="px-4 py-2 text-gray-500 hover:text-green-600 transition-colors">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </nav>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2024 Nepali Mart. All Rights Reserved.</p>
-            <div class="flex justify-center space-x-4 mt-4">
-                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+    <!-- Modern Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-shopping-basket text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold minecraft-font">Nepali Mart</span>
+                    </div>
+                    <p class="text-gray-400 mb-4 max-w-md">
+                        Your trusted neighborhood store providing quality products and exceptional service. 
+                        We're committed to bringing you the best shopping experience.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="offers.html" class="text-gray-400 hover:text-white transition-colors">Offers</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Shipping Info</a></li>
+                    </ul>
+                </div>
             </div>
-            <p class="mt-4">Contact: info@nepalimart.com</p>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 Nepali Mart. All Rights Reserved.</p>
+                <p class="text-gray-400 mt-2">Contact: info@nepalimart.com | Phone: +977-1-2345678</p>
+            </div>
         </div>
     </footer>
 
+    <script src="src/script.js"></script>
 </body>
 </html> 
