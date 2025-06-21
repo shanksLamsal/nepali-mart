@@ -102,10 +102,9 @@
                     <select class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
                         <option>All Categories</option>
                         <option>Groceries</option>
-                        <option>Fresh Produce</option>
-                        <option>Dairy & Eggs</option>
-                        <option>Beverages</option>
-                        <option>Snacks</option>
+                        <option>Furniture</option>
+                        <option>Electronics</option>
+                        <option>Sports</option>
                     </select>
                     <select class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
                         <option>Price: Low to High</option>
@@ -115,7 +114,7 @@
                     </select>
                 </div>
                 <div class="text-gray-600">
-                    <span id="product-count">12</span> products found
+                    <span id="product-count">16</span> products found
                 </div>
             </div>
         </div>
@@ -125,7 +124,7 @@
     <main class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                <!-- Product Card 1 -->
+                <!-- Product Card 1 - Groceries -->
                 <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
@@ -146,7 +145,7 @@
                     </div>
                 </div>
 
-                <!-- Product Card 2 -->
+                <!-- Product Card 2 - Groceries -->
                 <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
@@ -165,7 +164,7 @@
                     </div>
                 </div>
 
-                <!-- Product Card 3 -->
+                <!-- Product Card 3 - Groceries -->
                 <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
@@ -185,7 +184,7 @@
                     </div>
                 </div>
 
-                <!-- Product Card 4 -->
+                <!-- Product Card 4 - Groceries -->
                 <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
@@ -205,7 +204,124 @@
                     </div>
                 </div>
 
-                <!-- Product Card 5 -->
+                <!-- Product Card 5 - Furniture -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Modern Sofa" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-bold">NEW</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Modern Living Room Sofa</h3>
+                        <p class="text-gray-600 text-sm mb-3">Comfortable 3-seater sofa for your living room</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">Rs. 45,000</span>
+                        </div>
+                        <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors add-to-cart-btn" 
+                                data-name="Modern Living Room Sofa" data-price="45000">
+                            <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 - Furniture -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1532372320572-cda25653a58f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Dining Table" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Wooden Dining Table Set</h3>
+                        <p class="text-gray-600 text-sm mb-3">6-seater dining table with chairs</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">Rs. 32,500</span>
+                        </div>
+                        <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors add-to-cart-btn" 
+                                data-name="Wooden Dining Table Set" data-price="32500">
+                            <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 7 - Electronics -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Smartphone" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">HOT</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Smartphone Pro Max</h3>
+                        <p class="text-gray-600 text-sm mb-3">Latest smartphone with advanced features</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">Rs. 85,000</span>
+                        </div>
+                        <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors add-to-cart-btn" 
+                                data-name="Smartphone Pro Max" data-price="85000">
+                            <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 8 - Electronics -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Laptop" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Gaming Laptop</h3>
+                        <p class="text-gray-600 text-sm mb-3">High-performance gaming laptop</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">Rs. 125,000</span>
+                        </div>
+                        <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors add-to-cart-btn" 
+                                data-name="Gaming Laptop" data-price="125000">
+                            <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 9 - Sports -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Football" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-bold">POPULAR</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Professional Football</h3>
+                        <p class="text-gray-600 text-sm mb-3">Official size and weight football</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">Rs. 2,500</span>
+                        </div>
+                        <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors add-to-cart-btn" 
+                                data-name="Professional Football" data-price="2500">
+                            <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 10 - Sports -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Basketball" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Indoor Basketball</h3>
+                        <p class="text-gray-600 text-sm mb-3">Professional indoor basketball</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">Rs. 3,200</span>
+                        </div>
+                        <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors add-to-cart-btn" 
+                                data-name="Indoor Basketball" data-price="3200">
+                            <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 11 - Groceries -->
                 <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
@@ -225,7 +341,7 @@
                     </div>
                 </div>
 
-                <!-- Product Card 6 -->
+                <!-- Product Card 12 - Groceries -->
                 <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
@@ -244,41 +360,80 @@
                     </div>
                 </div>
 
-                <!-- Product Card 7 -->
+                <!-- Product Card 13 - Electronics -->
                 <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
                     <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                             alt="Organic Eggs" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-bold">ORGANIC</div>
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Wireless Headphones" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-bold">WIRELESS</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Organic Free-Range Eggs</h3>
-                        <p class="text-gray-600 text-sm mb-3">Farm fresh organic eggs from free-range chickens</p>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Wireless Bluetooth Headphones</h3>
+                        <p class="text-gray-600 text-sm mb-3">High-quality sound with noise cancellation</p>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-2xl font-bold text-green-600">Rs. 1,124</span>
+                            <span class="text-2xl font-bold text-green-600">Rs. 8,500</span>
                         </div>
                         <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors add-to-cart-btn" 
-                                data-name="Organic Free-Range Eggs" data-price="1124">
+                                data-name="Wireless Bluetooth Headphones" data-price="8500">
                             <i class="fas fa-cart-plus mr-2"></i>Add to Cart
                         </button>
                     </div>
                 </div>
 
-                <!-- Product Card 8 -->
+                <!-- Product Card 14 - Furniture -->
                 <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
                     <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                             alt="Natural Honey" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-bold">NATURAL</div>
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Office Chair" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Pure Natural Honey</h3>
-                        <p class="text-gray-600 text-sm mb-3">100% pure natural honey from local beekeepers</p>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Ergonomic Office Chair</h3>
+                        <p class="text-gray-600 text-sm mb-3">Comfortable office chair with lumbar support</p>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-2xl font-bold text-green-600">Rs. 2,124</span>
+                            <span class="text-2xl font-bold text-green-600">Rs. 15,000</span>
                         </div>
                         <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors add-to-cart-btn" 
-                                data-name="Pure Natural Honey" data-price="2124">
+                                data-name="Ergonomic Office Chair" data-price="15000">
+                            <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 15 - Sports -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Tennis Racket" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Professional Tennis Racket</h3>
+                        <p class="text-gray-600 text-sm mb-3">High-quality tennis racket for professionals</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">Rs. 12,000</span>
+                        </div>
+                        <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors add-to-cart-btn" 
+                                data-name="Professional Tennis Racket" data-price="12000">
+                            <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 16 - Electronics -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Smart Watch" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">SALE</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Smart Fitness Watch</h3>
+                        <p class="text-gray-600 text-sm mb-3">Track your fitness goals with this smart watch</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">Rs. 18,500</span>
+                            <span class="text-gray-400 line-through text-sm">Rs. 22,000</span>
+                        </div>
+                        <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors add-to-cart-btn" 
+                                data-name="Smart Fitness Watch" data-price="18500">
                             <i class="fas fa-cart-plus mr-2"></i>Add to Cart
                         </button>
                     </div>

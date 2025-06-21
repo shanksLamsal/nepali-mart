@@ -1,186 +1,122 @@
-# Nepali Mart - Modern E-commerce Website
+# Nepali Mart - Your Trusted Neighborhood Store
 
-A fully responsive, modern e-commerce website built with HTML, CSS, and JavaScript, featuring a clean design inspired by major e-commerce platforms like Amazon, Daraz, and Flipkart.
+A modern e-commerce website for Nepali Mart, featuring a beautiful UI with full functionality including shopping cart, product filtering, and responsive design.
 
-## 🚀 Features
+## 🌟 Features Implemented
 
-### ✨ Modern Design
-- **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
-- **Clean & Minimalist UI**: Professional design with soft shadows, rounded corners, and hover effects
-- **Minecraft-Inspired Elements**: Blocky fonts for headings using Press Start 2P Google Font
-- **Modern Color Scheme**: Green-based theme with professional gradients
+### ✅ Category Dropdown Navigation
+- Hover over "Categories" in the header to see dropdown menu
+- Choose from: Groceries, Furniture, Electronics, Sports
+- Works on both desktop (hover) and mobile (click)
 
-### 🛒 E-commerce Functionality
-- **Sticky Navigation Bar**: Always accessible navigation with search and category dropdown
-- **Search Functionality**: Real-time product search with filtering
-- **Shopping Cart**: Full cart management with localStorage persistence
-- **Cart Count Badge**: Dynamic cart item count with animations
-- **Product Grid**: Responsive product cards with hover effects
-- **Category Filtering**: Dropdown menu for product categories
+### ✅ Add to Cart Functionality
+- Click "Add to Cart" on any product
+- Quantity selector modal appears
+- Cart count updates in real-time
+- Cart data persists in localStorage
+- Full cart management (add, remove, update quantities)
 
-### 🎨 UI/UX Enhancements
-- **Hero Banner**: Eye-catching banner with call-to-action buttons
-- **Toast Notifications**: User feedback for cart actions
-- **Mobile Menu**: Responsive hamburger menu for mobile devices
-- **Loading Animations**: Smooth transitions and hover effects
-- **Modern Footer**: Comprehensive footer with social links and support
+### ✅ Awards Slideshow
+- Auto-playing slideshow with 3 awards
+- Navigation arrows and dot indicators
+- Pause on hover functionality
+- Smooth transitions between slides
 
-### 📱 Responsive Features
-- **Mobile-First Design**: Optimized for all screen sizes
-- **Touch-Friendly**: Large buttons and touch targets
-- **Flexible Grid**: Adaptive product grid layout
-- **Optimized Typography**: Readable fonts at all sizes
+### ✅ Product Filtering System
+- Filter by category (Groceries, Furniture, Electronics, Sports)
+- Sort by price (low to high, high to low)
+- Sort by name (A to Z, Z to A)
+- Real-time product count updates
+- Smooth animations when filtering
 
-## 🛠️ Technologies Used
+### ✅ Responsive Design
+- Mobile-friendly navigation
+- Responsive product grid
+- Touch-friendly interactions
+- Optimized for all screen sizes
 
-- **HTML5**: Semantic markup structure
-- **CSS3**: Modern styling with Flexbox and Grid
-- **TailwindCSS**: Utility-first CSS framework
-- **JavaScript (ES6+)**: Modern JavaScript with modules
-- **Font Awesome**: Icon library
-- **Google Fonts**: Press Start 2P and Inter fonts
+## 🚀 Deployment to GitHub Pages
+
+### Method 1: Automatic Deployment
+1. Push your code to a GitHub repository
+2. Go to repository Settings > Pages
+3. Select "Deploy from a branch"
+4. Choose "main" branch and "/ (root)" folder
+5. Click "Save"
+
+### Method 2: Using GitHub CLI
+```bash
+# Install GitHub CLI if not already installed
+# Then run:
+gh repo create nepali-mart --public
+git add .
+git commit -m "Initial commit"
+git push -u origin main
+gh repo edit --enable-pages
+```
+
+### Method 3: Manual Upload
+1. Create a new repository on GitHub
+2. Upload all files to the repository
+3. Enable GitHub Pages in repository settings
+4. Set source to "Deploy from a branch" and select main branch
 
 ## 📁 File Structure
-
 ```
 nepali-mart/
-├── index.html              # Homepage with hero banner and featured products
-├── products.html           # Product catalog with filtering
-├── cart.html              # Shopping cart with order summary
+├── index.html              # Home page
+├── products.html           # Products page with filtering
+├── cart.html              # Shopping cart page
 ├── about.html             # About page
 ├── contact.html           # Contact page
-├── offers.html            # Offers and deals page
+├── offers.html            # Offers page
+├── help-center.html       # Help center
+├── privacy-policy.html    # Privacy policy
+├── terms-of-service.html  # Terms of service
+├── shipping-info.html     # Shipping information
+├── groceries.html         # Groceries category page
+├── furniture.html         # Furniture category page
+├── electronics.html       # Electronics category page
+├── sports.html            # Sports category page
 ├── src/
-│   ├── styles.css         # Custom CSS with animations and responsive design
-│   └── script.js          # JavaScript functionality for cart and interactions
-├── public/                # Static assets (images, etc.)
-└── README.md              # Project documentation
+│   ├── script.js          # Main JavaScript functionality
+│   └── styles.css         # Custom CSS styles
+└── README.md              # This file
 ```
 
-## 🎯 Key Features Implementation
+## 🛠️ Technologies Used
+- **HTML5** - Semantic markup
+- **CSS3** - Styling with Tailwind CSS
+- **JavaScript (ES6+)** - Interactive functionality
+- **Tailwind CSS** - Utility-first CSS framework
+- **Font Awesome** - Icons
+- **Google Fonts** - Typography
 
-### 1. Sticky Navigation
-- Stays at top when scrolling
-- Search bar with real-time filtering
-- Category dropdown menu
-- Cart icon with item count
-- Mobile-responsive hamburger menu
+## 🎨 Design Features
+- Modern, clean design with green color scheme
+- Smooth animations and transitions
+- Hover effects on interactive elements
+- Mobile-first responsive design
+- Accessibility-friendly navigation
 
-### 2. Shopping Cart System
-- Add/remove items
-- Quantity controls
-- Local storage persistence
-- Order summary with subtotal, shipping, tax
-- Clear cart functionality
-- Toast notifications
-
-### 3. Product Management
-- Product cards with images, titles, prices
-- Add to cart buttons with data attributes
-- Product categories and filtering
-- Responsive grid layout
-- Hover effects and animations
-
-### 4. Search & Filter
-- Real-time search functionality
-- Category-based filtering
-- Sort options (price, name)
-- Product count display
-
-## 🎨 Design Elements
-
-### Minecraft-Inspired Features
-- **Press Start 2P Font**: Blocky, pixelated font for headings
-- **Blocky Buttons**: Sharp, geometric button designs
-- **Pixel-Perfect Layout**: Clean, structured design
-- **Color Palette**: Green theme with professional gradients
-
-### Modern E-commerce Elements
-- **Hero Sections**: Engaging banners with CTAs
-- **Product Cards**: Clean, informative product displays
-- **Shopping Cart**: Professional cart interface
-- **Footer**: Comprehensive site information
-
-## 🚀 Getting Started
-
-1. **Clone or Download** the project files
-2. **Open `index.html`** in your web browser
-3. **Navigate** through the different pages
-4. **Test** the shopping cart functionality
-5. **Try** the search and filtering features
-
-## 📱 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+## 📱 Browser Compatibility
+- Chrome (recommended)
+- Firefox
+- Safari
+- Edge
 - Mobile browsers (iOS Safari, Chrome Mobile)
 
-## 🎯 Customization
-
-### Colors
-The color scheme can be easily customized by modifying the CSS variables in `src/styles.css`:
-- Primary: Green (#16a34a)
-- Secondary: Dark Green (#15803d)
-- Accent: Red (#dc2626)
-
-### Fonts
-- Headings: Press Start 2P (Minecraft-style)
-- Body: Inter (Modern, readable)
-
-### Layout
-- Grid system using TailwindCSS
-- Responsive breakpoints for all devices
-- Flexible container system
-
-## 🔧 Development
-
-### Adding New Products
-1. Add product HTML to the appropriate page
-2. Include `add-to-cart-btn` class and data attributes
-3. Add product image and details
-4. Test cart functionality
-
-### Modifying Styles
-1. Edit `src/styles.css` for custom styles
-2. Use TailwindCSS classes for utility styling
-3. Maintain responsive design principles
-
-### JavaScript Features
-- Cart management in `src/script.js`
-- Search functionality
-- Mobile menu toggle
-- Toast notifications
-
-## 📈 Performance
-
-- **Optimized Images**: Using Unsplash for high-quality placeholders
-- **Minimal Dependencies**: Only essential libraries
-- **Fast Loading**: Optimized CSS and JavaScript
-- **Responsive Images**: Proper sizing for all devices
-
-## 🎉 Future Enhancements
-
-- [ ] User authentication system
-- [ ] Payment gateway integration
-- [ ] Product reviews and ratings
-- [ ] Wishlist functionality
-- [ ] Advanced filtering options
-- [ ] Dark mode toggle
-- [ ] PWA capabilities
-- [ ] Multi-language support
+## 🔧 Local Development
+1. Clone the repository
+2. Open `index.html` in your browser
+3. All functionality works locally without a server
 
 ## 📞 Support
-
-For questions or support, please contact:
-- Email: info@nepalimart.com
-- Phone: +977-1-2345678
+For any issues or questions, please check the help center page or contact us through the contact form.
 
 ## 📄 License
-
-This project is open source and available under the MIT License.
+This project is created for Nepali Mart. All rights reserved.
 
 ---
 
-**Built with ❤️ for modern e-commerce experiences**
+**Note**: This website is designed to work perfectly on GitHub Pages. All paths are relative and all functionality is client-side, making it ideal for static hosting.
