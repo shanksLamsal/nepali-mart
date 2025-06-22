@@ -26,20 +26,13 @@
 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center space-x-8">
-                    <!-- Search Bar -->
-                    <div class="relative">
-                        <input type="text" placeholder="Search products..." 
-                               class="w-80 px-4 py-2 pl-10 pr-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
-                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
-                    </div>
-
                     <!-- Category Dropdown -->
                     <div class="relative group">
                         <button class="flex items-center space-x-1 text-gray-700 hover:text-green-600 transition-colors">
                             <span>Categories</span>
                             <i class="fas fa-chevron-down text-sm"></i>
                         </button>
-                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                             <a href="groceries.html" class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">Groceries</a>
                             <a href="furniture.html" class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">Furniture</a>
                             <a href="electronics.html" class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">Electronics</a>
@@ -69,17 +62,19 @@
 
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4 border-t border-gray-200">
-                <div class="mt-4">
-                    <input type="text" placeholder="Search products..." 
-                           class="w-full px-4 py-2 pl-10 pr-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
-                </div>
                 <div class="mt-4 space-y-2">
                     <a href="index.html" class="block py-2 text-gray-700 hover:text-green-600">Home</a>
                     <a href="products.html" class="block py-2 text-gray-700 hover:text-green-600">Products</a>
                     <a href="offers.html" class="block py-2 text-gray-700 hover:text-green-600">Offers</a>
                     <a href="about.html" class="block py-2 text-gray-700 hover:text-green-600">About</a>
                     <a href="contact.html" class="block py-2 text-gray-700 hover:text-green-600">Contact</a>
+                    <div class="border-t border-gray-200 pt-2 mt-2">
+                        <h3 class="font-semibold text-gray-500 text-sm px-2 mb-1">Categories</h3>
+                        <a href="groceries.html" class="block py-2 px-4 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded">Groceries</a>
+                        <a href="furniture.html" class="block py-2 px-4 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded">Furniture</a>
+                        <a href="electronics.html" class="block py-2 px-4 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded">Electronics</a>
+                        <a href="sports.html" class="block py-2 px-4 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded">Sports</a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -26,20 +26,13 @@
 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center space-x-8">
-                    <!-- Search Bar -->
-                    <div class="relative">
-                        <input type="text" placeholder="Search products..." 
-                               class="w-80 px-4 py-2 pl-10 pr-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
-                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
-                    </div>
-
                     <!-- Category Dropdown -->
                     <div class="relative group">
                         <button class="flex items-center space-x-1 text-gray-700 hover:text-green-600 transition-colors">
                             <span>Categories</span>
                             <i class="fas fa-chevron-down text-sm"></i>
                         </button>
-                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                             <a href="groceries.html" class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">Groceries</a>
                             <a href="furniture.html" class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">Furniture</a>
                             <a href="electronics.html" class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">Electronics</a>
@@ -69,17 +62,19 @@
 
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4 border-t border-gray-200">
-                <div class="mt-4">
-                    <input type="text" placeholder="Search products..." 
-                           class="w-full px-4 py-2 pl-10 pr-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
-                </div>
                 <div class="mt-4 space-y-2">
                     <a href="index.html" class="block py-2 text-gray-700 hover:text-green-600">Home</a>
                     <a href="products.html" class="block py-2 text-gray-700 hover:text-green-600">Products</a>
                     <a href="offers.html" class="block py-2 text-gray-700 hover:text-green-600">Offers</a>
                     <a href="about.html" class="block py-2 text-gray-700 hover:text-green-600">About</a>
                     <a href="contact.html" class="block py-2 text-gray-700 hover:text-green-600">Contact</a>
+                    <div class="border-t border-gray-200 pt-2 mt-2">
+                        <h3 class="font-semibold text-gray-500 text-sm px-2 mb-1">Categories</h3>
+                        <a href="groceries.html" class="block py-2 px-4 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded">Groceries</a>
+                        <a href="furniture.html" class="block py-2 px-4 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded">Furniture</a>
+                        <a href="electronics.html" class="block py-2 px-4 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded">Electronics</a>
+                        <a href="sports.html" class="block py-2 px-4 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded">Sports</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,18 +94,19 @@
             <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                 <div class="flex items-center space-x-4">
                     <span class="text-gray-700 font-medium">Filter by:</span>
-                    <select class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-                        <option>All Categories</option>
-                        <option>Groceries</option>
-                        <option>Furniture</option>
-                        <option>Electronics</option>
-                        <option>Sports</option>
+                    <select id="category-filter" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <option value="all">All Categories</option>
+                        <option value="groceries">Groceries</option>
+                        <option value="furniture">Furniture</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="sports">Sports</option>
                     </select>
-                    <select class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-                        <option>Price: Low to High</option>
-                        <option>Price: High to Low</option>
-                        <option>Name: A to Z</option>
-                        <option>Name: Z to A</option>
+                    <span class="text-gray-700 font-medium">Sort by:</span>
+                    <select id="sort-filter" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="name-asc">Name: A to Z</option>
+                        <option value="name-desc">Name: Z to A</option>
                     </select>
                 </div>
                 <div class="text-gray-600">
@@ -123,9 +119,9 @@
     <!-- Products Grid -->
     <main class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 products-grid">
                 <!-- Product Card 1 - Groceries -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group" data-category="groceries">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
                              alt="Premium Rice" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
@@ -146,7 +142,7 @@
                 </div>
 
                 <!-- Product Card 2 - Groceries -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group" data-category="groceries">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
                              alt="Organic Oil" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
@@ -165,7 +161,7 @@
                 </div>
 
                 <!-- Product Card 3 - Groceries -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group" data-category="groceries">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
                              alt="Fresh Vegetables" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
@@ -185,7 +181,7 @@
                 </div>
 
                 <!-- Product Card 4 - Groceries -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group" data-category="groceries">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
                              alt="Organic Fruits" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
@@ -205,7 +201,7 @@
                 </div>
 
                 <!-- Product Card 5 - Furniture -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group" data-category="furniture">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
                              alt="Modern Sofa" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
@@ -225,7 +221,7 @@
                 </div>
 
                 <!-- Product Card 6 - Furniture -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group" data-category="furniture">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1532372320572-cda25653a58f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
                              alt="Dining Table" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
@@ -244,7 +240,7 @@
                 </div>
 
                 <!-- Product Card 7 - Electronics -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group" data-category="electronics">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
                              alt="Smartphone" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
@@ -264,7 +260,7 @@
                 </div>
 
                 <!-- Product Card 8 - Electronics -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group" data-category="electronics">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
                              alt="Laptop" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
@@ -283,7 +279,7 @@
                 </div>
 
                 <!-- Product Card 9 - Sports -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group" data-category="sports">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
                              alt="Football" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
@@ -303,7 +299,7 @@
                 </div>
 
                 <!-- Product Card 10 - Sports -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group" data-category="sports">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
                              alt="Basketball" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
@@ -322,7 +318,7 @@
                 </div>
 
                 <!-- Product Card 11 - Groceries -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group" data-category="groceries">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
                              alt="Fresh Milk" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
@@ -342,7 +338,7 @@
                 </div>
 
                 <!-- Product Card 12 - Groceries -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group" data-category="groceries">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
                              alt="Whole Grain Bread" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
@@ -361,7 +357,7 @@
                 </div>
 
                 <!-- Product Card 13 - Electronics -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group" data-category="electronics">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
                              alt="Wireless Headphones" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
@@ -381,7 +377,7 @@
                 </div>
 
                 <!-- Product Card 14 - Furniture -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group" data-category="furniture">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
                              alt="Office Chair" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
@@ -400,7 +396,7 @@
                 </div>
 
                 <!-- Product Card 15 - Sports -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group" data-category="sports">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
                              alt="Tennis Racket" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
@@ -419,7 +415,7 @@
                 </div>
 
                 <!-- Product Card 16 - Electronics -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group" data-category="electronics">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
                              alt="Smart Watch" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
